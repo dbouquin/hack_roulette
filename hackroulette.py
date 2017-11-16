@@ -19,18 +19,7 @@ def start():
 def hack(): #old=False, dead=False, length=24, people=4, number=1):
     i = random.randint(0, len(all_hacks)-1)
     hack_str = open(all_hacks[i]).read()
-    #hack_str = 'hack roullette'
     return render_template('hack.html', hack_str=hack_str)
-
-#def purchase(money=50):
-    #try:
-       #current_feature_name = request.args.get("feature_name")
-       #money = int(money) - destinations[current_feature_name]
-       #purchased.append(current_feature_name)
-    #except:
-       #return page_train(money)
-    #return page_train(money)
-
 
 # route for handling the login page logic
 #@app.route('/', methods=['GET', 'POST'])
