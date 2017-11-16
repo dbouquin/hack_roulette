@@ -1,0 +1,67 @@
+<html>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<style>
+
+  .roulette_wheel {
+     background:
+       /* url('http://www.roulettebonuscode.com/images/roulette-wheel.gif') center center no-repeat; */
+       url('https://cdn1.iconfinder.com/data/icons/sin-city-memories/128/roulette-512.png') center center no-repeat;
+
+      width: 550px;
+      height: 550px;
+
+      animation-duration: 1000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      -moz-border-radius: 300px;
+    	-webkit-border-radius: 300px;
+    	border-radius: 300px;
+
+  }
+
+  .spin_wheel {
+    animation-name: spin;
+
+  }
+
+  @keyframes spin {
+      from {
+          transform:rotate(0deg);
+      }
+      to {
+          transform:rotate(360deg);
+      }
+  }
+
+</style>
+
+<script>
+
+  $(function() {
+
+    $( ".spin_button" ).click(function() {
+      $('.roulette_wheel').addClass('spin_wheel');
+      setTimeout(function(){
+        $('.roulette_wheel').removeClass('spin_wheel');
+      }, 2000);
+      return false;
+
+  });
+
+});
+
+</script>
+
+<body>
+
+<div class = "roulette_wheel"></div>
+
+<a class = "spin_button" href = "">spin me</a>
+
+</body>
+</html>
