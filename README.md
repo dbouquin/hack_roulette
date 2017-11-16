@@ -10,7 +10,7 @@ Place your bets and test your luck!
 How to run
 ----------
 
-> export FLASK_APP=hackroulette.py
-> flask run
-> open http://127.0.0.1:5000/
+    > export FLASK_APP=hackroulette.py
+    > flask run
+    > open http://127.0.0.1:5000/
 
