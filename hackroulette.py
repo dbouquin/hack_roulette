@@ -13,7 +13,15 @@ all_hacks = glob.glob('hacks-collector/dotastro*/*yml')
 
 @app.route('/')
 def start():
-    return render_template('hackroulette.html') 
+    number = random.randint(1, 3)
+    title = ''
+    for j in range(number):
+        i = random.randint(0, len(all_hacks)-1)
+        hack_str = open(all_hacks[i])
+        hack_yml = yaml.load(hack_str)
+        title += " " + hack_yml['title']
+    time = random.randint(0, 48)
+    return render_template('hackroulette.html', title=title, time=time) 
 
 
 @app.route('/hack/', methods=['GET', 'POST'])

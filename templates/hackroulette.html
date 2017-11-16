@@ -4,14 +4,74 @@
     <title>Hack Roulette</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet" media="screen">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<style>
+  .roulette_wheel {
+     background:
+       /* url('http://www.roulettebonuscode.com/images/roulette-wheel.gif') center center no-repeat; */
+       url('https://cdn1.iconfinder.com/data/icons/sin-city-memories/128/roulette-512.png') center center no-repeat;
+      width: 550px;
+      height: 550px;
+      animation-duration: 1000ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      -moz-border-radius: 300px;
+    	-webkit-border-radius: 300px;
+    	border-radius: 300px;
+  }
+  .spin_wheel {
+    animation-name: spin;
+  }
+  @keyframes spin {
+      from {
+          transform:rotate(0deg);
+      }
+      to {
+          transform:rotate(360deg);
+      }
+  }
+  .hack_result{
+      color: white; 
+  }
+  .visible {
+      color: black;
+  }
+</style>
+
+<script>
+  $(function() {
+    $( ".spin_button" ).click(function() {
+      $('.roulette_wheel').addClass('spin_wheel');
+      setTimeout(function(){
+        $('.roulette_wheel').removeClass('spin_wheel');
+        $('.hack_result').addClass('visible');
+      }, 2000);
+      return false;
+  });
+});
+</script>
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to Hack Roulette!</h2>
+      <h1>Welcome to Hack Roulette!</h1>
       <br>
-      <br> <form action="/hack" background-color="blue">
-      <input type="submit" text='SPIN!' style= "background-color: #999999">
-      </form>
+      <table><tr><td>
+      <div class = "roulette_wheel"></div>
+      </td>
+      <td>
+      <div class = "hack_result"> 
+         <h2>Here is your Hack!</h2>
+         <br>
+         <b> Title:</b> {{ title}} <br>
+         <b> Time:</b> {{ time }} hours <br>
+      </div> 
+      </td>
+      </tr></table>
+      <a class = "spin_button" href = "">spin me</a>
     </div>
   </body>
 </html>
