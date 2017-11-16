@@ -1,0 +1,45 @@
+{% extends 'index.html'%}
+
+{% block heading %}
+<h1>.Astronomy {{header.id}}</h1>
+<h3>{{header.date}}</h3>
+<p>{{header.venue}}</p>
+<p><strong>Organizers:</strong> {{header.loc}}</p>
+{% endblock %}
+
+{% block main_content %}
+{% if not hacks %}
+<h2>Sadly there were no hacks at this .Astro</h2>
+{% else %}
+<h2>Hack Day projects</h2>
+{% for data in hacks %}
+  <h3>{{data.title}}</h3>
+  <p>{{data.description}}</p>
+  <h3>Creators</h3>
+  <ul>
+  {% for creator in data.creators %}
+  <li>{{creator}}</li>
+  {% endfor %}
+</ul>
+
+<h4>Other Information</h4>
+<ul>
+  {% if data['source-url'] %}
+  <li><a href="{{data['source-url']}}">Go to source</a></li>
+  {% endif %}
+  {% if data['live-url']%}
+  <li><a href="{{data['live-url']}}">Go to live</a></li>
+  {% endif %}
+  {% if data['doi']%}
+  <li><a href="{{data['doi']}}">DOI: {{data.doi}}</a></li>
+  {% endif %}
+</ul>
+
+{% for image in data.images %}
+<img src="{{image}}" /><br/>
+{% endfor %}
+
+<hr />
+{% endfor%}
+{% endif %}
+{% endblock %}
