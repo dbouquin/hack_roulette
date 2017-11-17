@@ -3,9 +3,14 @@ creators:
     - Lisa Ballard
     - Daina Bouquin
     - Steve Crawford
-description: Generate a new hack using past dotastro hacks.
+description: Spin the wheel to generate a new hack using past dotastro hacks.
 source-url: https://github.com/dbouquin/hack_roulette
+images: hack_roulette.png
 contact-github:
     - basilleaf
     - crawfordsm
     - dbouquin
+orcid: 
+	- orcid.org/0000-0003-2626-3688
+	- 
+	- 
