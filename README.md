@@ -14,3 +14,4 @@ How to run
     > flask run
     > open http://127.0.0.1:5000/
 
+![badge-img](https://img.shields.io/badge/Made%20at-%23dotastro-brightgreen.svg)
